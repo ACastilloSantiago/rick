@@ -1,25 +1,10 @@
-/* .App {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("https://cdn.dribbble.com/users/4044779/screenshots/11588258/rick_morty_camp_800x600_optimized.gif");
-  display: flex;
-  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/1770453485893246977/FA4026EBB255ACE569504E4EB81645214FDF1CE7/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true");
-  background-size: cover;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-} */
 .App {
   width: 100vw;
-  height: 100vh;
-  text-align: center;
+  min-height: 100vh;
   background-image: url("https://fondosanimados.com/wp-content/uploads/2023/02/rick-and-morty-in-the-space-wallpaper-estatico.jpg");
-
-  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
 }

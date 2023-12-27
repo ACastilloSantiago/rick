@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { useState, useEffect } from "react";
 import style from "./Card.module.css";
 const Card = ({
+  favv,
   id,
   name,
   status,
@@ -16,20 +17,12 @@ const Card = ({
   addFav,
   myFavorites,
 }) => {
-  // log;
   let props = { id, name, status, species, gender, origin, image };
+  console.log("card", props);
   const [isFav, setIsFav] = useState(false);
   const handleFavorite = () => {
     isFav ? removeFav(id) : addFav(props); // CON TERNARIO
     setIsFav(!isFav);
-    // if (isFav) {
-    //   setIsFav(false);
-    //   removeFav(id);
-
-    // } else {
-    //   setIsFav(true);
-    //   addFav(props);
-    // }
   };
   useEffect(() => {
     myFavorites.forEach((fav) => {
@@ -39,29 +32,40 @@ const Card = ({
     });
   }, [myFavorites]);
   return (
-    <div className={style.div}>
+    <div className={style.card}>
       {isFav ? (
-        <button className={style.fav} onClick={handleFavorite}>
+        <span className={style.card__fav} onClick={handleFavorite}>
           ❤️
-        </button>
+        </span>
       ) : (
-        <button className={style.fav} onClick={handleFavorite}>
+        <span className={style.card__fav} onClick={handleFavorite}>
           🤍
-        </button>
+        </span>
       )}
-      <img className={style.image} src={image} alt={name} />
-      <Link to={`/detail/${id}`}>
-        <h3 className={style.name}>{name}</h3>
-      </Link>
-      <div className={style.data}>
-        <h2>Species:{species}</h2>
-        <h2>Gender:{gender}</h2>
-        <h2>Status:{status}</h2>
-        <h2>Origin:{origin.name}</h2>
+      <div className={style.imagen}>
+        <img className={style.imagen__image} src={image} alt={name} />
+        <img
+          className={style.imagen__images}
+          src="https://i.pinimg.com/originals/98/29/21/9829215db6f9210c0ae4e318e854cb1f.png"
+          alt=""
+        />
+        <Link to={`/detail/${id}`}>
+          <h3 className={style.imagen__name}>{name}</h3>
+        </Link>
       </div>
-      <button className={style.close} onClick={() => onClose(id)}>
-        X
-      </button>
+      <div className={style.text}>
+        <span className={style.card__span}>Species: {species}</span>
+        <span className={style.card__span}>Gender: {gender}</span>
+        <span className={style.card__span}>Status: {status}</span>
+        <span className={style.card__span}>Origin: {origin.name}</span>
+      </div>
+      {favv ? (
+        ""
+      ) : (
+        <span className={style.card__close} onClick={() => onClose(id)}>
+          X
+        </span>
+      )}
     </div>
   );
 };
@@ -79,39 +83,3 @@ const mapStateToProps = (state) => {
   return { myFavorites: state.myFavorites };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Card);
-
-// const Card ({ id, name, status, species, gender, origin, image, onClose ,removeFav,addFav}) => {
-//   // log;
-//   const [isFav,setIsFav] = useState(false);
-//   const handleFavorite = () => {
-//     if (isFav) {
-//       setIsFav(false)
-//       removeFav(id)
-//     } else {
-//       setIsFav(true)
-//       addFav()
-//     }
-//   }
-//   return (
-//     <div>
-//       <hr />
-//       <button onClick={() => onClose(id)}>X</button>
-//       <Link to={`/detail/${id}`}>
-//         <h3 className="card-name">{name}</h3>
-//       </Link>
-//       <h2>Status:{status}</h2>
-//       <h2>Species:{species}</h2>
-//       <h2>Gender:{gender}</h2>
-//       <h2>Origin:{origin.name}</h2>
-//       <img src={image} alt={name} />
-//     </div>
-//   );
-// }
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     removeFav: () => { dispatch(removeFav()) },
-//     addFav: ()=>{dispatch(addFav())}
-
-//   }
-// }
-// export default connect(null,mapDispatchToProps)(Card);

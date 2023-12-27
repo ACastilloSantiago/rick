@@ -1,0 +1,31 @@
+.main {
+  width: 100%;
+  padding: 8px;
+}
+.main__title {
+  color: #fff;
+  text-align: center;
+}
+.options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+}
+.options__select {
+  padding: 8px;
+  border: none;
+
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 400;
+  color: #fff;
+  background-color: #14af5c;
+}
+.options__filter {
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0;
+}

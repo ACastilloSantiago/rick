@@ -1,31 +1,13 @@
-.center {
-  padding: 0.5%;
-  margin-top: 5px;
-  border: solid green;
-  background-color: grey;
-  /* text-align: end; */
-  /* width: 30%;
-  height: 20%; */
-  /* position: relative; */
+.navbar {
+  background: #494848;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 16px;
+  width: 100%;
 }
-
-.bt {
-}
-
-.nav {
-  /* position: center; */
-  text-align: end;
-  width: 80%;
-}
-.bt1 {
-  /* text-align: start; */
-  /* position: left; */
-}
-.bt2 {
-  /* text-align: start; */
-  /* position: left; */
-}
-.bt3 {
-  /* text-align: start; */
-  /* position: left; */
+.logo {
+  width: 48px;
 }

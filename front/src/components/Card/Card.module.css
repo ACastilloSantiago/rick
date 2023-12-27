@@ -1,108 +1,96 @@
-.div {
-  /* margin-left: 0; */
-  height: 20rem;
-  width: 35rem;
-  /* max */
-  background-image: url("https://img.freepik.com/vector-premium/patron-galaxia-fondo-espacio-oscuro_739746-93.jpg");
-  color: wheat;
-  flex-direction: row-reverse;
-  position: relative;
-  border-radius: 0.4rem;
-  border: solid rebeccapurple;
-  margin-bottom: 2%;
+.card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  background-image: url("../../../background-card.png");
+  width: 140px;
+  color: wheat;
+  position: relative;
+  border-radius: 8px;
+  border: 2px solid rebeccapurple;
+  overflow: hidden;
+  padding: 8px;
 }
-.close {
-  border: groove;
-  position: absolute;
-  margin-top: 0.2em;
-  margin-right: 0.2em;
-  top: 0;
-  right: 0;
-  border-radius: 10px;
 
-  transition: font-size 0.3s;
-  font-size: 25px;
+.imagen {
+  text-align: center;
+  position: relative;
 }
-.close:hover {
-  font-size: 30px;
-  background-color: rgba(255, 0, 0, 0.719);
-}
-.fav {
-  border: groove;
+
+.imagen__image {
+  width: 80%;
+  border-radius: 50%;
   position: absolute;
-  margin-top: 0.2em;
-  margin-left: 0.2em;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto auto;
+}
+.imagen__images {
+  overflow: hidden;
+  width: 90%;
+}
+.imagen__name {
+  padding: 0 4px;
+  color: #fff;
+  border-radius: 8px;
+  background-color: rgba(238, 226, 161, 0.76);
+  position: absolute;
+  font-size: 0.75em;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card__close {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  font-size: 1em;
+  color: #fff;
+  z-index: 5;
+}
+.card__close:hover {
+  /* background-color: rgba(255, 0, 0, 0.719); */
+  cursor: pointer;
+}
+.card__fav {
+  position: absolute;
   top: 0;
   left: 0;
-  border-radius: 10px;
-  transition: font-size 0.3s;
-  font-size: 20px;
-}
-.fav:hover {
-  font-size: 25px;
-  background-color: rgb(235, 94, 181);
-}
-.name {
-  background-color: rgba(238, 226, 161, 0.76);
-  border: solid rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  position: absolute;
   font-size: 1em;
-  bottom: 30vh;
-  /* right: 1.8vw; */
-  width: 10vw;
-
-  transition: color 0.3s;
-  transition: font-size 0.3s;
-  border-radius: 12rem;
-  /* justify-content: start; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  justify-content: center;
+  z-index: 5;
 }
-.name:hover {
+.card__fav:hover {
+  /* background-color: rgb(235, 94, 181); */
+  cursor: pointer;
+}
+
+.card__name:hover {
   color: rgb(149, 70, 202);
   font-size: 22px;
 }
 
-.name:active {
+.card__name:active {
   color: blue;
 }
 
-.image {
-  border-radius: 10rem;
-  width: 40%;
-  margin: 1rem;
+.text {
+  width: 100%;
+  text-align: center;
+  /* padding: 0 8px; */
 }
 
-/* .btn {
-  background-color: rgb(243, 52, 253);
-  color: black;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  width: 1vw;
-  height: 3vh;
-  cursor: pointer;
-} */
-
-.data {
-  /* margin: 1em; */
-  /* text-align:  ; */
-  /* margin-right: 5em; */
-  font-family: monospace;
-  /* margin: 0; */
-  /* position: absolute; */
-
-  display: flex;
-  flex-direction: column;
-  /* width: 100%; */
-  /* justify-content: start; */
-  margin: 0;
-  padding: 0;
+.card__span {
+  display: block;
+  font-size: 1em;
+  /* text-align: start; */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

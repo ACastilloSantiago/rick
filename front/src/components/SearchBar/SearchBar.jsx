@@ -8,22 +8,35 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className={style.divSearch}>
+    <div className={style.search}>
       <input
-        className={style.inputSearch}
+        className={style.search__input}
         id="agregar"
         type="search"
         value={id}
         onChange={handleChange}
+        placeholder="Escrbir"
       />
-      <button
+      {/* <button
         onClick={() => {
           onSearch(id);
           // setid("");
         }}
+        className={style.search__button}
       >
         Agregar
-      </button>
+      </button> */}
+      <div className={style.icon_container}>
+        <img
+          src="../../../vector-search.svg"
+          alt="search-logo"
+          className={style.icon__logo}
+          onClick={() => {
+            onSearch(id);
+            // setid("");
+          }}
+        />
+      </div>
     </div>
   );
 };

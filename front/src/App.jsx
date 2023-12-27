@@ -12,15 +12,12 @@ import Favorites from "./components/Favorites/Favorites";
 // export const API_KEY = "key=henrym-acastillosantiago";
 
 function App() {
-  // <h1>2</h1>;
   const { pathname } = useLocation();
 
   const [characters, setCharacters] = useState([]);
 
   const navigate = useNavigate();
   const [access, setAccess] = useState(false);
-
-  // login async aWait
 
   const login = async (userData) => {
     try {
@@ -35,7 +32,7 @@ function App() {
       setAccess(access);
       access && navigate("/home");
     } catch (error) {
-      console.log(error);
+      console.log("s", error);
     }
   };
 
@@ -110,10 +107,14 @@ function App() {
   // const PASSWORD = "123456"
 
   return (
-    <div className="App">
+    <main className="App">
       {pathname !== "/" && <Nav onSearch={onSearch} />}
       <Routes>
         <Route path="/" element={<Form login={login} />} />
+
+        <Route path="/login" element={<Form login={login} />} />
+        <Route path="/signin" element={<Form login={login} />} />
+
         <Route
           path="/home"
           element={<Cards characters={characters} onClose={onClose} />}
@@ -122,7 +123,7 @@ function App() {
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
-    </div>
+    </main>
   );
 }
 

@@ -1,20 +1,9 @@
-.fondo {
-  /* background-image: url("https://steamuserimages-a.akamaihd.net/ugc/1770453485893246977/FA4026EBB255ACE569504E4EB81645214FDF1CE7/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true"); */
-  /* background-image: url("https://fondosmil.com/fondo/27375.jpg"); */
-  background-repeat: no-repeat;
-  background-size: 100vw 100vh;
-}
-.div {
-  /* border: solid red; */
-  /* background-color: white; */
-  margin-top: 1%;
-  width: 100vw;
-  height: 100vh;
+.cards {
+  padding: 16px;
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
-  text-align: center;
-  justify-content: space-around;
-  /* white-space: nowrap; */
-  /* background-color: aliceblue;
-  border: solid rebeccapurple; */
+  /* align-items: center; */
+  justify-content: center;
+  gap: 8px;
 }

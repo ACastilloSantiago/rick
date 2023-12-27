@@ -1,0 +1,35 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  align-items: center;
+  background: #4948489a;
+  margin-top: 8px;
+  border-radius: 8px;
+  width: 300px;
+  /* box-shadow: 1px 1px 1px #00fd1eb6; */
+  background-image: url("../../../background-card.png");
+  border: 1px solid #00fd1eb6;
+}
+.detail__img {
+  border-radius: 8px;
+  width: 200px;
+}
+.detail__texts {
+  text-align: center;
+}
+.detail__title {
+  text-align: center;
+  font-size: 2.8em;
+  font-weight: 500;
+  color: #00fd1eb6;
+  color: #fff;
+}
+.detail__text {
+  display: block;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.75em;
+}

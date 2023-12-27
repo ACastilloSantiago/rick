@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import style from "./Detail.module.css";
 // import { URL_BASE, API_KEY } from "../../App";
 const Detail = () => {
   const { id } = useParams();
@@ -37,18 +38,30 @@ const Detail = () => {
   // console.log(character.origin.name);
   console.log(character);
   return (
-    <div>
-      <h1>{character.name && character.name}</h1>
-      <h2>Status|{character.status && character.status}</h2>
-      <h2>Species|{character.species && character.species}</h2>
-      <h2>Gender|{character.gender && character.gender}</h2>
-      <h2>Origin|{character.origin?.name && character.origin?.name}</h2>
-      {/* <h2>Origin:{origin.name}</h2> */}
+    <section className={style.detail}>
+      <h1 className={style.detail__title}>
+        {character.name && character.name}
+      </h1>
       <img
         src={character.image && character.image}
         alt={character.name && character.name}
+        className={style.detail__img}
       />
-    </div>
+      <div className={style.detail__texts}>
+        <span className={style.detail__text}>
+          Status | {character.status && character.status}
+        </span>
+        <span className={style.detail__text}>
+          Species | {character.species && character.species}
+        </span>
+        <span className={style.detail__text}>
+          Gender | {character.gender && character.gender}
+        </span>
+        <span className={style.detail__text}>
+          Origin | {character.origin?.name && character.origin?.name}
+        </span>
+      </div>
+    </section>
   );
 };
 export default Detail;
