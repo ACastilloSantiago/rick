@@ -18,7 +18,7 @@ const Card = ({
   myFavorites,
 }) => {
   let props = { id, name, status, species, gender, origin, image };
-  console.log("card", props);
+  // console.log("card", props);
   const [isFav, setIsFav] = useState(false);
   const handleFavorite = () => {
     isFav ? removeFav(id) : addFav(props); // CON TERNARIO
