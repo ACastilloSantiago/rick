@@ -31,4 +31,11 @@
 .icon__logo {
   width: 24px;
   height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon__logo:hover {
+  cursor: pointer;
+  transform: rotate(15deg);
+  scale: 1.1;
 }

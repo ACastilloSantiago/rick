@@ -41,10 +41,15 @@
   font-size: 2em;
   color: red;
   line-height: 0.5em;
+  transition: all 0.3s ease;
 }
 
 .signin__close:hover {
   cursor: pointer;
+  /* background-color: rgba(255, 0, 0, 0.719); */
+  scale: 1.1;
+  color: red;
+  transform: rotate(5deg);
 }
 .signin__title {
   font-weight: 700;
@@ -86,8 +91,9 @@
   background-color: #333;
   /* text-align: center; */
   width: 90%;
-
+  font-size: 1em;
   /* margin: 0 auto; */
+  outline: 0;
 }
 
 .form__validation {
@@ -125,4 +131,9 @@
   font-size: 1em;
   font-weight: 500;
   margin-top: 8px;
+}
+@media screen and (min-width: 768px) {
+  .signin {
+    width: 50%;
+  }
 }

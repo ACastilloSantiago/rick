@@ -10,13 +10,24 @@ const Nav = ({ onSearch }) => {
 
   return (
     <div className={style.navbar}>
-      <Link to={"/"}>
+      <Link to={"/"} className={style.logoContainer}>
         <img src="../../unnamed.webp" alt="logo" className={style.logo} />
       </Link>
       {pathname == "/home" && <SearchBar onSearch={onSearch} />}
-
+      <section className={style.links}>
+        <Link className={style.links__link} to="/home" onClick={close}>
+          Inicio
+        </Link>
+        <Link className={style.links__link} to="/favorites" onClick={close}>
+          Favoritos
+        </Link>
+        <Link className={style.links__link} to="/about" onClick={close}>
+          Sobre Mí
+        </Link>
+      </section>
       <img
-        hidden={burger}
+        // hidden={burger}
+        className={style.burger}
         src="../../../vector-links.svg"
         alt="logo-links"
         onClick={() => {

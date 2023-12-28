@@ -8,6 +8,49 @@
   padding: 0 16px;
   width: 100%;
 }
+.logoContainer {
+  flex: 1;
+}
 .logo {
   width: 48px;
+  transition: all 0.3s ease-in-out;
+}
+.logo:hover {
+  transform: rotate(-15deg);
+  scale: 1.1;
+}
+.burger {
+  /* width: 24px; */
+  height: 24px;
+  flex: 1;
+}
+.links {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+.links__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.85em;
+  transition: all 0.3s ease-in-out;
+}
+.links__link:hover {
+  color: #00ff6aad;
+  text-decoration: underline;
+  scale: 1.1;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar {
+    padding: 0 32px;
+  }
+  .burger {
+    display: none;
+  }
+  .links {
+    display: flex;
+  }
 }

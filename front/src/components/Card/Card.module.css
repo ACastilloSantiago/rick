@@ -54,10 +54,14 @@
   font-size: 1em;
   color: #fff;
   z-index: 5;
+  transition: all 0.3s ease;
 }
 .card__close:hover {
   /* background-color: rgba(255, 0, 0, 0.719); */
   cursor: pointer;
+  scale: 1.1;
+  color: red;
+  transform: rotate(5deg);
 }
 .card__fav {
   position: absolute;
@@ -65,10 +69,13 @@
   left: 0;
   font-size: 1em;
   z-index: 5;
+  transition: all 0.3s ease;
 }
 .card__fav:hover {
   /* background-color: rgb(235, 94, 181); */
   cursor: pointer;
+  scale: 1.1;
+  transform: rotate(-5deg);
 }
 
 .card__name:hover {
@@ -93,4 +100,16 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 480px) {
+  .card {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .card {
+    width: 450px;
+    flex-direction: row;
+  }
 }

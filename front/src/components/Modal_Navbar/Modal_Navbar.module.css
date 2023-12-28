@@ -38,3 +38,8 @@
     transform: translate(150vw);
   }
 }
+@media screen and (min-width: 480px) {
+  .main {
+    width: 150px;
+  }
+}

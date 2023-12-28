@@ -9,13 +9,14 @@
   margin-top: 8px;
   border-radius: 8px;
   width: 300px;
-  /* box-shadow: 1px 1px 1px #00fd1eb6; */
+  box-shadow: 1px 1px 10px #ccc;
   background-image: url("../../../background-card.png");
   border: 1px solid #00fd1eb6;
 }
 .detail__img {
   border-radius: 8px;
   width: 200px;
+  margin: 8px 0;
 }
 .detail__texts {
   text-align: center;
@@ -32,4 +33,26 @@
   color: #fff;
   font-weight: 300;
   font-size: 1.75em;
+}
+
+@media screen and (min-width: 480px) {
+  .detail {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .detail {
+    width: 450px;
+  }
+  .detail__img {
+    width: 250px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .detail {
+    width: 650px;
+  }
+  .detail__img {
+    width: 300px;
+  }
 }
