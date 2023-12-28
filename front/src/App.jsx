@@ -11,7 +11,7 @@ import Favorites from "./components/Favorites/Favorites";
 // export const URL_BASE = "https://rym2-production.up.railway.app/api/character/";
 // export const API_KEY = "key=henrym-acastillosantiago";
 // !! Axios
-// axios.defaults.baseURL = "https://rickandmorty-hmva.onrender.com/";
+axios.defaults.baseURL = "https://rickandmorty-hmva.onrender.com/";
 
 function App() {
   const { pathname } = useLocation();
@@ -24,7 +24,7 @@ function App() {
   const login = async (userData) => {
     try {
       const { email, password } = userData;
-      const URL = "https://rickandmorty-hmva.onrender.com/rickandmorty/login/";
+      const URL = "rickandmorty/login/";
       const { data } = await axios(
         URL + `?email=${email}&password=${password}`
       );
@@ -64,9 +64,7 @@ function App() {
   //! Onsearch de servidor local en Async-Await
   const onSearch = async (id) => {
     try {
-      const { data } = await axios(
-        `https://rickandmorty-hmva.onrender.com/rickandmorty/character/${id}`
-      );
+      const { data } = await axios(`rickandmorty/character/${id}`);
       setCharacters((oldChars) => [...oldChars, data]);
     } catch (error) {
       window.alert("¡No hay personajes con este ID!");

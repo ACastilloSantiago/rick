@@ -10,8 +10,7 @@ const UserModel = require("./models/User");
 
 // URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
 const sequelize = new Sequelize(
-  // `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/rickandmorty`
-  "postgresql://postgres:f6f32cb*g6eEBe-E6*Da61DbgC5ED2*1@roundhouse.proxy.rlwy.net:46347/railway",
+  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/railway`,
   { logging: false } // sirve para no mostrar por la consola la traduccion de lo que hace sequelize a sql
 );
 

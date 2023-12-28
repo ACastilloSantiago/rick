@@ -11,12 +11,14 @@
   animation: opacity 0.3s;
   /* overflow: hidden; */
   z-index: 10;
+  overflow: hidden;
 }
 .modal {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
+  animation: translate 0.3s;
 }
 .modal__exit {
   font-size: 1.5em;
@@ -35,7 +37,12 @@
 @keyframes opacity {
   0% {
     opacity: 0;
-    transform: translate(150vw);
+    /* transform: translateX(5vh); */
+  }
+}
+@keyframes translate {
+  0% {
+    transform: translateX(20vw);
   }
 }
 @media screen and (min-width: 480px) {

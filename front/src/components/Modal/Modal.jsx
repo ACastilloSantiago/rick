@@ -20,7 +20,7 @@ const Modal = ({ Open, Close }) => {
   const register = async () => {
     try {
       //   const { email, password } = userData;
-      const URL = "https://rickandmorty-hmva.onrender.com/rickandmorty/login/";
+      const URL = "rickandmorty/login/";
       await axios.post(URL, userData);
       //   console.log(access);
       //   console.log(data);
