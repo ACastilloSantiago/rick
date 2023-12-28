@@ -10,6 +10,8 @@ import Form from "./components/Form/Form";
 import Favorites from "./components/Favorites/Favorites";
 // export const URL_BASE = "https://rym2-production.up.railway.app/api/character/";
 // export const API_KEY = "key=henrym-acastillosantiago";
+// !! Axios
+// axios.defaults.baseURL = "https://apidoggyklopedia.onrender.com/";
 
 function App() {
   const { pathname } = useLocation();

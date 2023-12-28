@@ -12,7 +12,7 @@
   border: none;
   border-radius: 8px 0 0 8px;
   border-right: 1px #494848 solid;
-  font-size: 1em;
+  font-size: 0.8em;
   color: #494848;
 }
 .search__input:focus-visible {
