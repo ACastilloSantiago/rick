@@ -25,16 +25,18 @@ const Nav = ({ onSearch }) => {
           Sobre Mí
         </Link>
       </section>
-      <img
-        // hidden={burger}
-        className={style.burger}
-        src="../../../vector-links.svg"
-        alt="logo-links"
-        onClick={() => {
-          setOpen(true);
-          setBurger(true);
-        }}
-      />
+      <div className={style.burgerContainer}>
+        <img
+          // hidden={burger}
+          className={style.burger}
+          src="../../../vector-links.svg"
+          alt="logo-links"
+          onClick={() => {
+            setOpen(true);
+            setBurger(true);
+          }}
+        />
+      </div>
       <Modal_Navbar
         open={open}
         close={() => {

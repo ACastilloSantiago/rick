@@ -20,10 +20,12 @@
   transform: rotate(-15deg);
   scale: 1.1;
 }
-.burger {
-  /* width: 24px; */
-  height: 24px;
+.burgerContainer {
+  text-align: end;
   flex: 1;
+}
+.burger {
+  height: 24px;
 }
 .links {
   display: none;
@@ -48,7 +50,7 @@
   .navbar {
     padding: 0 32px;
   }
-  .burger {
+  .burgerContainer {
     display: none;
   }
   .links {
