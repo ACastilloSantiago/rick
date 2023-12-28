@@ -10,15 +10,13 @@ const Detail = () => {
 
   //! useEffect con servidor local
   useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-      ({ data }) => {
-        if (data.name) {
-          setCharacter(data);
-        } else {
-          window.alert("No hay personajes con ese ID");
-        }
+    axios(`/rickandmorty/character/${id}`).then(({ data }) => {
+      if (data.name) {
+        setCharacter(data);
+      } else {
+        window.alert("No hay personajes con ese ID");
       }
-    );
+    });
     return setCharacter({});
   }, [id]);
 
@@ -43,7 +41,7 @@ const Detail = () => {
         {character.name && character.name}
       </h1>
       <img
-        src={character.image && character.image}
+        src={character?.image && character?.image}
         alt={character.name && character.name}
         className={style.detail__img}
       />
