@@ -5,6 +5,9 @@ const SearchBar = ({ onSearch }) => {
 
   const handleChange = (event) => {
     setid(event.target.value);
+    if (event.keyCode === 13) {
+      onSearch(id);
+    }
   };
 
   return (
@@ -12,10 +15,12 @@ const SearchBar = ({ onSearch }) => {
       <input
         className={style.search__input}
         id="agregar"
-        type="search"
+        type="number"
         value={id}
         onChange={handleChange}
-        placeholder="Escrbir"
+        placeholder="Escrbir id de personaje"
+        // onInput={handleChange}
+        onKeyDown={handleChange}
       />
       {/* <button
         onClick={() => {
