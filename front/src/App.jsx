@@ -11,7 +11,7 @@ import Favorites from "./components/Favorites/Favorites";
 // export const URL_BASE = "https://rym2-production.up.railway.app/api/character/";
 // export const API_KEY = "key=henrym-acastillosantiago";
 // !! Axios
-// axios.defaults.baseURL = "https://apidoggyklopedia.onrender.com/";
+// axios.defaults.baseURL = "https://rickandmorty-hmva.onrender.com/";
 
 function App() {
   const { pathname } = useLocation();
@@ -24,7 +24,7 @@ function App() {
   const login = async (userData) => {
     try {
       const { email, password } = userData;
-      const URL = "http://localhost:3001/rickandmorty/login/";
+      const URL = "https://rickandmorty-hmva.onrender.com/rickandmorty/login/";
       const { data } = await axios(
         URL + `?email=${email}&password=${password}`
       );
@@ -65,7 +65,7 @@ function App() {
   const onSearch = async (id) => {
     try {
       const { data } = await axios(
-        `http://localhost:3001/rickandmorty/character/${id}`
+        `https://rickandmorty-hmva.onrender.com/rickandmorty/character/${id}`
       );
       setCharacters((oldChars) => [...oldChars, data]);
     } catch (error) {
