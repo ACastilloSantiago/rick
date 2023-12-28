@@ -2,7 +2,7 @@ import { useState } from "react";
 import style from "./Modal.module.css";
 import validation from "../Validation/Validation";
 import axios from "axios";
-const Modal = ({ Open, Close }) => {
+const Modal = ({ Open, Close, login }) => {
   if (!Open) return;
   const [userData, setUserData] = useState({
     email: "",
@@ -19,13 +19,8 @@ const Modal = ({ Open, Close }) => {
   };
   const register = async () => {
     try {
-      //   const { email, password } = userData;
       const URL = "rickandmorty/login/";
       await axios.post(URL, userData);
-      //   console.log(access);
-      //   console.log(data);
-      //   setAccess(access);
-      //   access && navigate("/home");
     } catch (error) {
       console.log("s", error);
     }
@@ -33,6 +28,7 @@ const Modal = ({ Open, Close }) => {
   const handlerSubmit = (event) => {
     event.preventDefault();
     register(userData);
+    login(userData);
   };
   let disableSubmit = true;
   if (!errors.password && !errors.email) {

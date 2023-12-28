@@ -81,6 +81,7 @@ const Form = ({ login }) => {
           Crear Cuenta
         </button>
         <Modal
+          login={login}
           Open={open}
           Close={() => {
             setOpen(false);
