@@ -1,22 +1,14 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 const FavoriteModel = require("./models/Favorite");
 const UserModel = require("./models/User");
 
-// EJERCICIO 03
-// A la instancia de Sequelize le falta la URL de conexión. ¡Agrégala!
-// Recuerda pasarle la información de tu archivo '.env'.
-
-// URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
 const sequelize = new Sequelize(
-  "postgresql://postgres:MCJOYVzTGWbwNADInKPyYSfhEBvtrkmy@roundhouse.proxy.rlwy.net:19827/railway",
-  // `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/railway`,
+  `postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`,
   { logging: false } // sirve para no mostrar por la consola la traduccion de lo que hace sequelize a sql
 );
 
-// EJERCICIO 05
-// Debajo de este comentario puedes ejecutar la función de los modelos.
 FavoriteModel(sequelize);
 //
 UserModel(sequelize);
