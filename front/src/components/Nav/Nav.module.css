@@ -12,6 +12,11 @@
 .logoContainer {
   flex: 1;
 }
+
+.linkLogo {
+  display: flex;
+  align-items: center;
+}
 .logo {
   width: 48px;
   transition: all 0.3s ease-in-out;
@@ -21,6 +26,9 @@
   scale: 1.1;
 }
 .burgerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
   text-align: end;
   flex: 1;
 }

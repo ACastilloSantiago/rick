@@ -10,9 +10,11 @@ const Nav = ({ onSearch }) => {
 
   return (
     <div className={style.navbar}>
-      <Link to={"/"} className={style.logoContainer}>
-        <img src="../../unnamed.webp" alt="logo" className={style.logo} />
-      </Link>
+      <div className={style.logoContainer}>
+        <Link to={"/"} className={style.linkLogo}>
+          <img src="../../unnamed.webp" alt="logo" className={style.logo} />
+        </Link>
+      </div>
       {pathname == "/home" && <SearchBar onSearch={onSearch} />}
       <section className={style.links}>
         <Link className={style.links__link} to="/home" onClick={close}>
