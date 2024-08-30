@@ -1,17 +1,16 @@
-import "./App.css";
-import Nav from "./components/Nav/Nav";
-import Cards from "./components/Cards/Cards.jsx";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import About from "./components/About/About";
-import Detail from "./components/Detail/Detail";
-import Form from "./components/Form/Form";
-import Favorites from "./components/Favorites/Favorites";
-// export const URL_BASE = "https://rym2-production.up.railway.app/api/character/";
-// export const API_KEY = "key=henrym-acastillosantiago";
+import './App.css';
+import Nav from './components/Nav/Nav';
+import Cards from './components/Cards/Cards.jsx';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import About from './components/About/About';
+import Detail from './components/Detail/Detail';
+import Form from './components/Form/Form';
+import Favorites from './components/Favorites/Favorites';
+
 // !! Axios
-axios.defaults.baseURL = "https://rickandmorty-hmva.onrender.com/";
+axios.defaults.baseURL = import.meta.env.VITE_URL_API;
 
 function App() {
   const { pathname } = useLocation();
@@ -24,41 +23,18 @@ function App() {
   const login = async (userData) => {
     try {
       const { email, password } = userData;
-      const URL = "rickandmorty/login/";
-      const { data } = await axios(
-        URL + `?email=${email}&password=${password}`
-      );
+      const URL = 'rickandmorty/login/';
+      const { data } = await axios(URL + `?email=${email}&password=${password}`);
       const { access } = data;
-      console.log(access);
-      console.log(data);
       setAccess(access);
-      access && navigate("/home");
+      access && navigate('/home');
     } catch (error) {
-      console.log("s", error);
+      console.log(error);
     }
   };
 
-  // login promesas
-  // function login(userData) {
-  //   const { email, password } = userData;
-  //   const URL = "http://localhost:3001/rickandmorty/login/";
-  //   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-  //     const { access } = data;
-  //     setAccess(access);
-  //     access && navigate("/home");
-  //   });
-  // }
-
-  // Anterior login
-  // function login(userData) {
-  //   if (userData.password === PASSWORD && userData.email === EMAIL) {
-  //     setAccess(true);
-  //     navigate("/home");
-  //   }
-  // }
-
   useEffect(() => {
-    !access && navigate("/");
+    !access && navigate('/');
   }, [access]);
 
   //! Onsearch de servidor local en Async-Await
@@ -67,33 +43,11 @@ function App() {
       const { data } = await axios(`rickandmorty/character/${id}`);
       setCharacters((oldChars) => [...oldChars, data]);
     } catch (error) {
-      window.alert("¡No hay personajes con este ID!");
+      window.alert('¡No hay personajes con este ID!');
       console.log(error);
     }
   };
 
-  //! Onsearch de servidor local
-  // function onSearch(id) {
-  //   axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-  //     ({ data }) => {
-  //       if (data.name) {
-  //         setCharacters((oldChars) => [...oldChars, data]);
-  //       } else {
-  //         window.alert("¡No hay personajes con este ID!");
-  //       }
-  //     }
-  //   );
-  // }
-  /// ! Onsearch con api de henry
-  // function onSearch(id) {
-  //   axios(`${URL_BASE}${id}?${API_KEY}`).then(({ data }) => {
-  //     if (data.name) {
-  //       setCharacters((oldChars) => [...oldChars, data]);
-  //     } else {
-  //       window.alert("¡No hay personajes con este ID!");
-  //     }
-  //   });
-  // }
   ////////////
   const onClose = (id) => {
     setCharacters(
@@ -103,22 +57,13 @@ function App() {
     );
   };
 
-  // const EMAIL = "sattog@gmail.com";
-  // const PASSWORD = "123456"
-
   return (
     <main className="App">
-      {pathname !== "/" && <Nav onSearch={onSearch} />}
+      {pathname !== '/' && <Nav onSearch={onSearch} />}
       <Routes>
         <Route path="/" element={<Form login={login} />} />
 
-        <Route path="/login" element={<Form login={login} />} />
-        <Route path="/signin" element={<Form login={login} />} />
-
-        <Route
-          path="/home"
-          element={<Cards characters={characters} onClose={onClose} />}
-        />
+        <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/favorites" element={<Favorites />} />

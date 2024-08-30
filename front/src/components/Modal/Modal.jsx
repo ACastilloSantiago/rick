@@ -19,15 +19,15 @@ const Modal = ({ Open, Close, login }) => {
   };
   const register = async () => {
     try {
-      const URL = "rickandmorty/login/";
+      const URL = "rickandmorty/register/";
       await axios.post(URL, userData);
     } catch (error) {
       console.log("s", error);
     }
   };
-  const handlerSubmit = (event) => {
+  const handlerSubmit = async (event) => {
     event.preventDefault();
-    register(userData);
+    await register(userData);
     login(userData);
   };
   let disableSubmit = true;
