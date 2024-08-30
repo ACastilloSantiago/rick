@@ -13,7 +13,7 @@ router.get("/character/:id", (req, res) => {
 router.get("/login", async (req, res) => {
   await login(req, res);
 });
-router.post("/login", async (req, res) => {
+router.post("/register", async (req, res) => {
   await postUser(req, res);
 });
 router.post("/fav", async (req, res) => {
